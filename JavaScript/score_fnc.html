@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title> 함수 </title>
+    <script>
+      function TestScore(name, python, sql) {
+        this.uname = name;
+        this.upython = python;
+        this.usql = sql;
+      }
+      
+      TestScore.prototype.getTestInfo = function() {
+        var str = "";
+        str += "이름 : " + this.uname + "<br>";
+        str += "파이썬 : " + this.upython + "<br>";
+        str += "sql : " + this.usql + "<br>";
+       
+        return str;
+      }
+      
+      TestScore.prototype.getAvg = function() {
+        var avg = (this.upython + this.usql) / 2;
+        var result = ("평균 점수 : " + avg + "<br><br>")
+        
+        return result;
+      }
+      
+      var user = new TestScore("영희", 90, 100);
+      var user2 = new TestScore("철수", 95, 85);
+      
+      document.write(user.getTestInfo());
+      document.write(user.getAvg());
+      
+      document.write(user2.getTestInfo());
+      document.write(user2.getAvg());
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
