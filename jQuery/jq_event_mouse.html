@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>제이쿼리 마우스 이벤트</title>
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box;}
+      body{padding:20px;}
+      li{list-style:none;}
+      a{text-decoration: none;color: #000;}
+      .gnb{width:400px;text-align: center;overflow: hidden;}
+      .gnb li{width:25%;float: left;padding:5px;}
+      .gnb li a{border: 1px solid #000;display: block;padding:5px 0;}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"> 
+    </script>
+<!--
+    첫번째 <li>를 제외한 나머지 요소에 마우스를 올려 놓았을 때 바탕색을 초록색으로 변경하시오.
+    (단, 마우스 포인터가 요소를 벗어나면 원래대로 돌아오게 함.)
+-->
+    <script> 
+      $(function() {
+        var beforeMenu = null;
+        
+        $(".gnb > li > a").not(":first").on("mouseover focus", function() {
+          if(beforeMenu) beforeMenu.css("background", "none");
+          $(this).css("background", "green");
+          beforeMenu = $(this);
+        });
+        
+        $(".gnb").on("mouseleave", function() {
+          if(beforeMenu) beforeMenu.css("background", "none");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul class="gnb">
+      <li><a href="#">menu1</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+    </ul>
+  </body>
+</html>
