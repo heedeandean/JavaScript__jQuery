@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>효과 메서드</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"> 
+    </script>
+    <script>
+      $(function() {
+        $("#btn").on("click", function() {
+          $("h3").fadeOut(1000)
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn">fadeOut()</button>
+    <h3>요소가 점점 투명해지면서 사라집니다.</h3>
+  </body>
+</html>
