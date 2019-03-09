@@ -27,12 +27,12 @@
         $(".btnWrap button").on("click", function() {
           if(!t.is(":animated")) {
             if($(this).hasClass("backBtn")) {
-              if(cnt >= 2) {
+              if(cnt > 1) {
                 cnt--;
                 t.animate({marginLeft:"-=10%"}, 300);
               }
             } else {
-              if(cnt <= 9) {
+              if(cnt < 10) {
                 cnt++;
                 t.animate({marginLeft:"+=10%"}, 300);
               }
