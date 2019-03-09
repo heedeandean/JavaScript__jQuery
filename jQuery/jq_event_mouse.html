@@ -20,16 +20,12 @@
 -->
     <script> 
       $(function() {
-        var beforeMenu = null;
-        
-        $(".gnb > li > a").not(":first").on("mouseover focus", function() {
-          if(beforeMenu) beforeMenu.css("background", "none");
+        $(".gnb a").not(":first").on("mouseover focus", function() {
           $(this).css("background", "green");
-          beforeMenu = $(this);
         });
         
-        $(".gnb").on("mouseleave", function() {
-          if(beforeMenu) beforeMenu.css("background", "none");
+        $(".gnb a").on("mouseleave", function() {
+          $(this).css("background", "none");
         });
       });
     </script>
